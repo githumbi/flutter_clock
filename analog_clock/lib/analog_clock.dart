@@ -10,7 +10,6 @@ import 'package:flutter/semantics.dart';
 import 'package:intl/intl.dart';
 import 'package:vector_math/vector_math_64.dart' show radians;
 
-
 import 'drawn_hand.dart';
 
 import 'clock_dial.dart';
@@ -135,21 +134,19 @@ class _AnalogClockState extends State<AnalogClock> {
       ),
       child: Container(
         //color: customTheme.backgroundColor,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.black26
-        ),
+        decoration:
+            BoxDecoration(shape: BoxShape.circle, color: Colors.black26),
         child: Stack(
           children: [
             Center(
-              child:  Container(
+              child: Container(
                 height: 144.00,
                 width: 144.00,
                 decoration: BoxDecoration(
                   color: Color(0xff8f52e1),
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0.00,8.00),
+                      offset: Offset(0.00, 8.00),
                       color: Color(0xff000000).withOpacity(0.16),
                       blurRadius: 0,
                     ),
@@ -159,25 +156,18 @@ class _AnalogClockState extends State<AnalogClock> {
               ),
             ),
             Container(
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width,
-              height: MediaQuery
-                  .of(context)
-                  .size
-                  .height,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
               padding: const EdgeInsets.all(10.0),
-              child:  CustomPaint(
+              child: CustomPaint(
                 painter: ClockDialPainter(),
               ),
             ),
             DrawnHand(
               color: Colors.blue,
-              thickness:15,
+              thickness: 15,
               size: 0.4,
               angleRadians: _now.hour * radiansPerTick,
-
             ),
             DrawnHand(
               color: customTheme.highlightColor,
@@ -190,10 +180,8 @@ class _AnalogClockState extends State<AnalogClock> {
               child: Container(
                 width: 20,
                 height: 20,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white
-                ),
+                decoration:
+                    BoxDecoration(shape: BoxShape.circle, color: Colors.white),
               ),
             ),
             // Example of a hand drawn with [CustomPainter].
