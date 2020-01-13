@@ -14,7 +14,7 @@ class ClockDialPainter extends CustomPainter {
   final TextStyle textStyle;
 
   ClockDialPainter()
-      : tickPaint =  Paint(),
+      : tickPaint = Paint(),
         textPainter = TextPainter(
           textAlign: TextAlign.center,
           textDirection: TextDirection.rtl,
@@ -41,7 +41,7 @@ class ClockDialPainter extends CustomPainter {
       // longer and thicker depending on its position on the clock.
       tickMarkLength = i % 5 == 0 ? hourTickMarkLength : minuteTickMarkLength;
       tickPaint.strokeWidth =
-      i % 5 == 0 ? hourTickMarkWidth : minuteTickMarkWidth;
+          i % 5 == 0 ? hourTickMarkWidth : minuteTickMarkWidth;
       canvas.drawLine(new Offset(0.0, -radius),
           new Offset(0.0, -radius + tickMarkLength), tickPaint);
 
